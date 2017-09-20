@@ -1,0 +1,171 @@
+ul{list-style: none;padding: 0;margin:0;}
+body{padding:0;margin:0;overflow: hidden;}
+table{
+	/*margin:40px auto;*/
+	width:100%;
+	/* height:100%; */
+}
+table,table th,table td{
+	border-collapse:collapse;
+	text-align:center;
+}
+table th,table td{
+	padding:20px 0;
+
+}
+
+table th{
+	width:25.5%;
+	font-size:30px;
+	color:#FFFFFF;
+}
+table td{
+	color:#FFFFFF;
+}
+table td a{
+	color:#FFFFFF;
+
+}
+table caption{
+	font-size:40px;
+	position:relative;
+	height:90px;
+	line-height:90px;
+	color:white;
+	text-align: center;
+	padding-left:135px;
+			
+}
+table caption>a{
+	float:right;
+	margin-right: 20px;
+	color:white;
+	text-decoration: none;
+}
+/*删除表格动画 Star*/
+/* table tr.hide{
+	animation-name:hide;
+	animation-duration:.6s;
+	border-width:0px;
+	animation-fill-mode: forwards;
+	animation-timing-function:ease;
+}
+@keyframes hide{
+	form{opacity:1;transform:translateX(0);}
+	to{opacity:0;transform:translateX(100%);}
+} */
+/*删除表格动画 End*/
+/*遮盖层 Star*/
+ #overlay{
+	height:100%;
+	width:100%;
+	background-color:rgba(0,0,0,0.6);
+	opacity: 0.999;
+	position:absolute;
+	left:0;top:0;
+	display:none;
+	transform-style: preserve-3d;
+	perspective:800px;
+} 
+#content{
+	opacity:0;	
+	display:inline-block;
+	transform:translateX(-50%) translateY(-50%)/*  rotateY(-90deg) */;
+	position:absolute;left:50%;top:50%;
+	display:none;
+	z-index:5;/*
+	padding:50px 100px;*/
+}
+#content #title{
+	
+	padding:10px 20px;
+	background:#0094ff;
+	text-align: center;
+	font-size:20px;
+	font-weight:bold;
+	color:#fff;
+	position:relative;
+
+}
+#content #cltitle{
+	display:inline-block;
+	height:30px;
+	width:30px;
+	border-radius: 50px;
+	border:2px solid #fff;
+	position:absolute;
+	top:50%;right:35px;
+	margin-top:-15px;
+	cursor: pointer;
+	opacity: 0.7;
+}
+#content #container{
+	background-color:#FFFFFF;
+	padding:100px 150px;
+	line-height: 40px;
+	opacity: 0.7;
+}
+#content #container li{
+	margin-bottom:5px;
+}/*
+#content #container li select{
+	height:35px;
+	width:173px;
+}*/
+#content #container label{
+	width:80px;
+	display:inline-block;
+}
+#content #container li input{
+	height:30px;
+	border:1px solid #82A296;
+}
+#content #container div{
+	text-align: center;
+	margin-top:30px;
+
+}
+#content #container div input{
+	margin-left:30px;
+	background-color:skyblue;
+	width:72px;
+	height:40px;
+	font-size: 20px;
+	color:#fff;
+}
+/*遮盖层 End*/
+
+/*遮盖层动画 Star*/
+#content.show{
+	animation:show .8s ease forwards;
+}
+#content.hide{
+	animation:hide .8s ease forwards;
+}
+@keyframes show{
+	0%{opacity:0;transform:translateX(-250% )  translateY(-50%);}
+	100%{transform:translateX(-50%) translateY(-50%);opacity:1;}
+	/* form{opacity:0;
+	transform:translateX(-50%) translateY(-50%) rotateY(-90deg);}
+	to{opacity:1;
+	transform:translateX(-50%) translateY(-50%) rotateY(0deg);}
+	 */}
+@keyframes hide{
+	from{
+		opacity:1;
+		transform:translateX(-50%) translateY(-50%) rotateY(0deg);
+	}
+	to{
+		opacity:0;
+		transform:translateX(-50%) translateY(-50%) rotateY(-90deg);
+	}
+}
+/* form{
+		opacity:1;
+		transform:translateX(-50%) translateY(-50%) rotateY(0deg);
+	}
+	to{
+		opacity:0;
+		transform:translateX(-50%) translateY(-50%) rotateY(-90deg);
+	} */
+/*遮盖层动画 End*/

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<link rel="stylesheet" href="../productor/prid.css">
+<script src="../js/ku.js"></script>
+<script src="../productor/prid.js"></script>
+<script>
+function delSong(key){//删除函数
+	var msg = {
+		flag:'del',
+		data:key,
+	};
+	msg = JSON.stringify(msg);
+	parent.window.postMessage(msg,'*');
+}
+
+function addSong(array){//请求增加函数
+	var msg = {
+		flag:'add',
+		data:array
+	};
+	msg = JSON.stringify(msg);
+	parent.window.postMessage(msg,'*');
+}
+function revise(array){
+	var msg ={
+		flag:'revise',
+		data:array
+	};
+	msg = JSON.stringify(msg);
+	parent.window.postMessage(msg,'*');
+}
+
+
+window.onmessage = function(e){
+var ms = JSON.parse(e.data);
+switch(ms.flag){
+	case 'show':
+		grid({
+			title:'歌曲大全',
+			data:ms.data,
+			key:'top',
+			container:'body',
+			delfn:delSong,
+			addfn:addSong,
+			updatafn:revise,
+			fields:[
+				{name:'top',isKey:true},
+				{name:'name'},
+				{name:'singer'}
+				
+			]
+		});
+		break;
+
+	case 'delcomplete':
+		// alert('删除成功');
+		break;
+	case 'addcomplete':
+		// alert('歌曲增加成功');
+	default:break;
+
+
+}
+
+
+}	
+</script>
+</head>
+<body id='body'>
+	<div>
+		
+	</div>
+</body>
+</html>

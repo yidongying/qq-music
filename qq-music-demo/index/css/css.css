@@ -1,0 +1,179 @@
+/*整体样式 Star*/
+body,html,ul,li{padding:0;margin:0;}
+body,html{width:100%;min-width:1350px;height:100%;}
+a{text-decoration: none;}
+.box{height:100%;width:100%;}
+.common{width:1340px;min-width:1350px;margin:0 auto;}
+@font-face{
+font-family:"myfont";
+font-size:normal;
+font-weight:normal;
+src:url('fonts/raphaelicons-webfont.eot') format('eot'),
+url('fonts/raphaelicons-webfont.svg') format('svg'),
+url('fonts/raphaelicons-webfont.ttf') format('truetype'),
+url('fonts/raphaelicons-webfont.woff') format('woff');
+}
+/*整体样式 End*/
+
+/*header Star*/
+.header{height:5%;top:0;left:0;background:url(../img/nav/navbg.jpg);width:100%;transition:all .3s;position:relative;}
+.header:hover .headerCont{opacity:1;transition:all .5s;position:absolute;left:50%;width:80%;transform:translateX(-50%);} 
+.header>.headerCont{opacity: 0;height:70px;}
+.header>.headerCont>.navList{position:absolute;top:0;left:200px;}
+.header>.headerCont>.navList>li{float: left;height:70px;width:96px;margin-right:50px;text-align:center;line-height:70px;cursor: pointer;}
+.header>.headerCont>.navList>li a{font-size:14px;color:#ccc;}
+.header>.headerCont>.navList>li.active{background-image: url(../img/nav/active.png);background-position:;}
+
+.header>.headerCont>.logo{height:60px;width:80px;background:url(../img/nav/logo.jpg);background-size:100% 100%;margin-left:50px;margin-top:5px;display:inline-block;}
+
+
+/*header End*/
+
+/*scroll star*/
+.content{height:95%;background:rgba(0,0,0,0.2); overflow: hidden; position:relative;transition:all .3s;}
+.content>.scroll{height:300%;width:100%;position:absolute;transition: all 1s ease;top:0;}
+/* 主要内容 Star */
+.content>.scroll>.shoufa{height:33.3333%;background-image:url(../img/background.jpg);}
+.content>.scroll>.shoufa .tite{height:80px;line-height:80px;}
+.content>.scroll>.shoufa .title{height:100px;color:#fff;/* line-height:100px; */font-size:50px;text-align: center;position:relative;}
+.content>.scroll>.shoufa .classfity{position:absolute;bottom:0;height: 30px;width:100%;text-align: center;}
+.content>.scroll>.shoufa .classfity>li{display:inline-block;line-height:10px;font-size:16px;height:20px;margin-top:0;margin-right:70px;}
+.content>.scroll>.shoufa .classfity>li a{font-size:16px;color:#999999;}
+
+
+/*轮播图1 Star*/
+.content #lunbo{width:1000px;margin:50px auto;height:400px;perspective: 800px;transform-style:preserve-3d;position:relative;}
+.content #lunbo:hover .lunboleft,.content #lunbo:hover .lunboright{transform:scale(1.5);transition:all .5s;background-color:rgba(255,255,255,0.3);}
+.content #lunbo .images{height:100%;width:1000px;position:relative;overflow: hidden;} 
+.content #lunbo .images>div{width:1000px;height:100%; position:absolute;top:0;left:0; font-size:0;}
+.content #lunbo .images>div span{width:250px;display:inline-block;height:100%;background-size: 100% 100%;overflow: hidden;position:relative;cursor:pointer;}
+
+
+.content #lunbo .images>div span>img{width:250px;height:300px;transition:all .3s;}
+.content .scroll #lunbo .images>div span>img:hover{transform:scale(1.03);}
+
+/* 轮播图里面内容 Star */
+.content #lunbo .images>div span>ul{height:100px;background:rgba(0,0,0,0.6);position:relative;overflow: hidden;}
+
+.content #lunbo .images>div span:hover ul{background:#31c27c;}
+.content #lunbo .images>div span:hover ul li{color:#a5e1c4;}
+
+.content #lunbo .images>div span>ul li:nth-child(1){height:22px;margin-top:25px;font-size:16px;color:#fff;text-align: center;
+ }
+ .content .images>div span>ul li:nth-child(1) a{font-family: 'myfont';line-height:22px;font-size:20px;position:absolute;right:20px;transition:all .5s;opacity:0;}
+
+.content #lunbo .images>div span:hover ul li a{transform:scale(1.5);opacity:1;}
+
+.content  .images>div span>ul li:nth-child(2){height:22px;margin-top:10px;font-size:12px;color:#999;text-align:center;
+ }
+/* 中间显示播放按钮 */
+
+.content #lunbo .images>div span>a{display:inline-block;height:50px;width:50px;background:rgba(255,255,255,.7);position:absolute;z-index:10;top:140px;left:100px;border-radius: 50%;transform:scale(1.2);transition:all .8s;opacity:0;} 
+.content #lunbo .images>div span>a>em{border:15px solid transparent;border-left-color:rgba(0,0,0,0.6);position: absolute;top:50%;left:50%;margin-left:-5px;margin-top:-15px;} 
+.content #lunbo .images>div span:hover a{opacity:1;}
+
+
+
+/* 播放按钮 */
+
+/* 轮播图里面内容 End */
+ /*.content #lunbo .kuai>span>img{height:300px;width:250px;}*/
+.content #lunbo .images>div{transition:.5s ease;}
+.content #lunbo .images>div:nth-child(1){position:absolute;left:0;}
+.content #lunbo .images>div:nth-child(2){position:absolute;left:100%;}
+.content #lunbo .images>div:nth-child(3){position:absolute;left:100%;}
+ 
+
+/* 切换轮播图 Star */
+/*.content #lunbo>.images>div.show{animation:show .6s ease forwards;}*/
+/*.content #lunbo.images>div.hide{animation:hide .6s ease forwards;}*/
+.show{animation:show .6s ease forwards;}
+.hide{animation:hide .6s ease forwards;}	
+@keyframes show{from{left:100%;}to{left:0;}}
+@keyframes hide{0%{left:0;}100%{left:-100%;}}
+.Rshow{animation:Rshow .6s ease forwards;}
+.Rhide{animation:Rhide .6s ease forwards;}	
+@keyframes Rshow{from{left:-100%;}to{left:0;}}
+@keyframes Rhide{0%{left:0;}100%{left:100%;}}
+
+
+/* 切换轮播图 End */
+
+
+.content #lunbo>.lunboleft,.content #lunbo>.lunboright{position:absolute;top:50%;height:50px;width:60px;text-align: center;line-height: 50px;font-size:30px;color:#FFFFFF;cursor:pointer;}
+.content #lunbo>.lunboleft{left:-100px;background-color:rgba(255,255,255,0.1);}
+.content #lunbo>.lunboright{right:-100px;background-color:rgba(255,255,255,0.1);}
+
+
+
+/*.content #lunbo>span:*/
+
+
+
+/*.content #lunbo*/
+
+
+/*热门 Star*/
+.content>.scroll>.remen{height:33.4333%;}
+.content>.scroll>.remen>.title{height:150px;background:#fff;line-height:150px;font-size:46px;text-align:center;font-family: '楷体'}
+.content>.scroll>.remen>#lunbo2{height:350px;width:1200px;background:red;margin:0 auto;margin-top:40px;font-size:0;perspective: 800px;font-size:0;}
+.content>.scroll>.remen>#lunbo2>ul{display:inline-block;width:25%;/* background:yellow; */}
+
+
+.content>.scroll>.remen #lunbo2 ul {
+	width:25%;/* background:orange; */height:100%;
+}
+.content>.scroll>.remen #lunbo2 ul/* :nth-child(1) */ li{
+	 width:75px; background:black;height:350px;position:relative;transform-origin:center center -180px;float:left;transition:all 2s;
+}
+.content>.scroll>.remen #lunbo2 ul/* :nth-child(1) */ li a{
+	display:inline-block;position:absolute;left:0;top:0;
+	background:green; height:350px;width:75px;background:url(../img/lunbo2/1.jpg);
+}
+.content>.scroll>.remen #lunbo2 ul/* :nth-child(1) */ li a:nth-child(1){z-index: 10;}
+.content>.scroll>.remen #lunbo2 ul/* :nth-child(1) */ li a:nth-child(2){transform:rotateX(90deg);transform-origin: bottom;top:-350px;}
+.content>.scroll>.remen #lunbo2 ul/* :nth-child(1) */ li a:nth-child(3){transform:translateZ(-350px);}
+.content>.scroll>.remen #lunbo2 ul/* :nth-child(1) */ li a:nth-child(4){transform:rotateX(-90deg);transform-origin: top;top:350px;}
+.content>.scroll>.remen #lunbo2 ul/* :nth-child(1) */ li span{
+	width:350px;height:350px;background-color: #6C5E5E;display:inline-block;position:absolute;}
+
+
+.content>.scroll>.remen #lunbo2 ul/* :nth-child(1) */ li span:nth-of-type(1){/*
+			background: url(images/5.jpg) no-repeat;*/
+			-webkit-transform-origin:left;
+			left:0;
+			-webkit-transform:rotateY(90deg);
+		}
+.content>.scroll>.remen #lunbo2 ul/* :nth-child(1) */ li span:nth-of-type(2){/*
+			background: url(images/6.jpg) no-repeat;*/
+			-webkit-transform-origin:right;
+			right:0;
+			-webkit-transform:rotateY(-90deg);
+
+		}
+
+
+
+
+
+
+.content>.scroll>.remen #btns{height:40px;width:400px;/* background:orange; */margin-top:30px;float:right;margin-right:50px;}
+.content>.scroll>.remen #btns span{height:40px;width:40px;background:rgba(237,188,83,0.5);border-radius: 50%;display:inline-block;line-height:40px;text-align:center;color:#fff;font-size:20px;cursor: pointer;}
+
+
+
+/*热门 Star*/
+.content>.scroll>.paihang{height:33.4333%; background-image:url(../img/listMes/background.jpg);overflow: hidden;position: relative;}
+
+.content>.scroll>.paihang #Meg{height:567px;width:1200px;position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;background-image: url(../img/part3/bgImg.jpg);}
+
+
+/* 主要内容 End */
+
+/*右侧滚动条 Star*/
+.content>.scroll>.chance{position:fixed;;right:20px;width:30px;top:50%;}
+.content .chance>span{display:inline-block;height:30px;width:30px;border-radius: 50%;background:rgba(57,17,210,0.5);}
+.content>.scroll>.chance>span:nth-child(1){background:rgba(57,17,210,1);}
+/*右侧滚动条 End*/
+/*scroll End*/
+
